@@ -1,0 +1,30 @@
+{
+  "name": "clawscan",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI Agent Security Scanner - Detect exposed API keys and misconfigurations",
+  "author": "Anoop Kansupada",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anoopkansupada/clawscan.git"
+  },
+  "homepage": "https://github.com/anoopkansupada/clawscan#readme",
+  "bugs": {
+    "url": "https://github.com/anoopkansupada/clawscan/issues"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "bun run --filter '*' build",
+    "test": "bun run --filter '*' test",
+    "lint": "bun run --filter '*' lint",
+    "clean": "rm -rf packages/*/dist",
+    "dev": "bun run --filter @clawscan/cli dev"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.0",
+    "typescript": "^5.3.0"
+  }
+}

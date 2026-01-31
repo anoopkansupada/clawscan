@@ -1,0 +1,50 @@
+{
+  "name": "@clawscan/core",
+  "version": "0.1.0",
+  "description": "ClawScan core scanning engine - Detect API keys and security misconfigurations",
+  "author": "Anoop Kansupada",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anoopkansupada/clawscan.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/anoopkansupada/clawscan#readme",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./scanners": {
+      "import": "./dist/scanners/index.js",
+      "types": "./dist/scanners/index.d.ts"
+    },
+    "./reporters": {
+      "import": "./dist/reporters/index.js",
+      "types": "./dist/reporters/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target node",
+    "test": "bun test",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "security",
+    "scanner",
+    "api-keys",
+    "secrets",
+    "docker",
+    "gitignore",
+    "ai-agent",
+    "openai",
+    "anthropic",
+    "slack",
+    "sarif"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "@clawscan/cli",
+  "version": "0.1.0",
+  "description": "ClawScan CLI - AI Agent Security Scanner",
+  "author": "Anoop Kansupada",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anoopkansupada/clawscan.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/anoopkansupada/clawscan#readme",
+  "bin": {
+    "clawscan": "./dist/clawscan.js"
+  },
+  "main": "dist/clawscan.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bun build src/clawscan.ts --outfile dist/clawscan.js --target node",
+    "dev": "bun run src/clawscan.ts",
+    "test": "bun test",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@clawscan/core": "workspace:*"
+  },
+  "keywords": [
+    "cli",
+    "security",
+    "scanner",
+    "api-keys",
+    "secrets",
+    "docker",
+    "gitignore",
+    "ai-agent",
+    "openai",
+    "anthropic",
+    "slack"
+  ]
+}

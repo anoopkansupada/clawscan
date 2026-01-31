@@ -1,0 +1,46 @@
+name: 'ClawScan'
+description: 'AI Agent Security Scanner - Detect exposed API keys, misconfigurations, and vulnerabilities'
+author: 'Anoop Kansupada'
+branding:
+  icon: 'shield'
+  color: 'red'
+
+inputs:
+  path:
+    description: 'Path to scan (default: current directory)'
+    required: false
+    default: '.'
+  fail-on:
+    description: 'Minimum severity to fail the workflow (critical, high, medium, low)'
+    required: false
+    default: 'high'
+  format:
+    description: 'Output format (console, json, sarif)'
+    required: false
+    default: 'console'
+  scanners:
+    description: 'Comma-separated list of scanners to run (api-keys, config-secrets, docker, gitignore)'
+    required: false
+    default: ''
+  exclude:
+    description: 'Comma-separated patterns to exclude from scanning'
+    required: false
+    default: ''
+
+outputs:
+  sarif-path:
+    description: 'Path to the generated SARIF file'
+  findings-count:
+    description: 'Total number of findings'
+  critical-count:
+    description: 'Number of critical severity findings'
+  high-count:
+    description: 'Number of high severity findings'
+  medium-count:
+    description: 'Number of medium severity findings'
+  low-count:
+    description: 'Number of low severity findings'
+
+runs:
+  using: 'node20'
+  main: 'dist/main.js'

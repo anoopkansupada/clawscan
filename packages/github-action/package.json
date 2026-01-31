@@ -1,0 +1,29 @@
+{
+  "name": "@clawscan/github-action",
+  "version": "0.1.0",
+  "description": "ClawScan GitHub Action - AI Agent Security Scanner",
+  "author": "Anoop Kansupada",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anoopkansupada/clawscan.git",
+    "directory": "packages/github-action"
+  },
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "bun build src/main.ts --outfile dist/main.js --target node",
+    "test": "bun test",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@clawscan/core": "workspace:*"
+  },
+  "keywords": [
+    "github-action",
+    "security",
+    "scanner",
+    "api-keys",
+    "sarif",
+    "code-scanning"
+  ]
+}
