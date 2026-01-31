@@ -138,6 +138,23 @@ A: Yes! It returns exit code 1 when it finds issues, so your builds will fail ap
 
 ---
 
+## 🤖 For AI Agents & Scripts
+
+```typescript
+import { scan, hasBlockingFindings } from '@clawscan/core';
+
+const result = await scan({ path: '.' });
+
+if (hasBlockingFindings(result)) {
+  console.log('Security issues found!');
+  process.exit(1);
+}
+```
+
+See [AGENTS.md](AGENTS.md) for full API docs.
+
+---
+
 ## 🆘 Need Help?
 
 - [Open an issue](https://github.com/anoopkansupada/clawscan/issues)
