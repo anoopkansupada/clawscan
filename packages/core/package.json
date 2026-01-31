@@ -1,7 +1,7 @@
 {
   "name": "@clawscan/core",
   "version": "0.1.0",
-  "description": "ClawScan core scanning engine - Detect API keys and security misconfigurations",
+  "description": "Security scanner for AI agents - Find leaked API keys, secrets, Docker misconfigs. Works with OpenAI, Anthropic, Slack, AWS, Stripe. SARIF output for GitHub.",
   "author": "Anoop Kansupada",
   "license": "MIT",
   "repository": {
@@ -37,14 +37,32 @@
   "keywords": [
     "security",
     "scanner",
-    "api-keys",
     "secrets",
-    "docker",
-    "gitignore",
-    "ai-agent",
+    "api-keys",
+    "secret-detection",
+    "leak-detection",
+    "credential-scanner",
     "openai",
     "anthropic",
+    "claude",
+    "gpt",
+    "llm",
+    "ai-agent",
+    "ai-security",
     "slack",
-    "sarif"
+    "aws",
+    "stripe",
+    "github",
+    "docker",
+    "docker-security",
+    "gitignore",
+    "sarif",
+    "sast",
+    "devsecops",
+    "ci-cd",
+    "github-action",
+    "code-scanning",
+    "vulnerability",
+    "audit"
   ]
 }
