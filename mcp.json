@@ -1,0 +1,39 @@
+{
+  "name": "clawscan",
+  "version": "0.1.0",
+  "description": "Security scanner for AI agent workflows",
+  "tools": [
+    {
+      "name": "scan_for_secrets",
+      "description": "Scan a directory for leaked API keys, Docker misconfigs, and security issues. Run before commits, deployments, or when user asks about security.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Directory to scan (default: current directory)",
+            "default": "."
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["critical", "high", "medium", "low"],
+            "description": "Minimum severity to report",
+            "default": "low"
+          }
+        }
+      },
+      "command": "npx @clawscan/cli scan {{path}} --severity {{severity}} --format json"
+    }
+  ],
+  "triggers": [
+    "security",
+    "audit",
+    "secrets",
+    "api keys",
+    "leaked",
+    "exposed",
+    "before deploy",
+    "before commit",
+    "check for keys"
+  ]
+}

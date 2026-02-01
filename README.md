@@ -138,20 +138,18 @@ A: Yes! It returns exit code 1 when it finds issues, so your builds will fail ap
 
 ---
 
-## 🤖 For AI Agents & Scripts
+## 🤖 Make Your AI Agent Auto-Scan
 
-```typescript
-import { scan, hasBlockingFindings } from '@clawscan/core';
+Add this to your project's `CLAUDE.md` (or similar AI config):
 
-const result = await scan({ path: '.' });
-
-if (hasBlockingFindings(result)) {
-  console.log('Security issues found!');
-  process.exit(1);
-}
+```markdown
+# Security
+Before commits or deployments, run: npx @clawscan/cli scan . --format json
 ```
 
-See [AGENTS.md](AGENTS.md) for full API docs.
+Now Claude, Cursor, Copilot, and other AI agents will automatically scan for security issues.
+
+See [AGENTS.md](AGENTS.md) for programmatic API.
 
 ---
 
