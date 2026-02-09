@@ -100,6 +100,49 @@ clawscan scan . --format json
 
 ---
 
+## ⏰ Automated Scanning
+
+Set up scheduled scans with one command:
+
+```bash
+# Weekly scan (Sundays at 9am)
+clawscan schedule --frequency weekly --path ~/code
+
+# Daily scan at 6am
+clawscan schedule --frequency daily --time 06:00 --path .
+
+# Check status
+clawscan schedule --status
+```
+
+**Works automatically on:**
+- 🍎 **macOS** — LaunchAgent (runs even after reboot)
+- 🐧 **Linux** — Systemd timer
+- 🔧 **Other** — Prints crontab entry
+
+---
+
+## 🔬 Extended Scanners
+
+ClawScan integrates with Google's security tools for deeper analysis:
+
+| Scanner | What It Does | Install |
+|---------|--------------|---------|
+| **osv-scanner** | Dependency vulnerabilities | `go install github.com/google/osv-scanner/v2/cmd/osv-scanner@latest` |
+| **magika** | AI file type detection (find disguised malware) | `pipx install magika` |
+| **santa** | macOS binary authorization | [Download DMG](https://github.com/google/santa/releases) |
+
+```typescript
+// Use in code
+import { scanDependencies, scanFiles, getSantaStatus } from '@clawscan/core/scanners';
+
+const vulns = await scanDependencies('./my-project');
+const files = await scanFiles('./uploads');
+const santa = await getSantaStatus();
+```
+
+---
+
 ## 🤖 Add to GitHub (Automatic Scanning)
 
 Add this file to your repo at `.github/workflows/security.yml`:
